@@ -3,12 +3,8 @@
  * being played.
  */
 
+import * as T from './types';
 import * as React from "react";
-
-import {
-    RecordProps,
-    YouTubePlayerEvent,
-} from "./types";
 
 import { UnitState } from "../../types/UnitState";
 
@@ -16,9 +12,9 @@ import Youtube from "react-youtube";
 
 // -----------------------------------------------------------------------------
 
-class Record extends React.PureComponent<RecordProps, UnitState> {
+class Record extends React.PureComponent<T.RecordProps, UnitState> {
 
-    constructor (props: RecordProps) {
+    constructor (props: T.RecordProps) {
         super(props, {});
 
         this.onYouTubeReady = this.onYouTubeReady.bind(this);
@@ -28,21 +24,24 @@ class Record extends React.PureComponent<RecordProps, UnitState> {
      * onYouTubeReady: Define behaviour for when YT player has initialised. In
      * this case, we start the video if the Record should be playing.
      */
-    onYouTubeReady (event: YouTubePlayerEvent) : void {
+    onYouTubeReady (event: T.YouTubePlayerEvent) : void {
         if (this.props.playing) {
             event.target.playVideo();
         }
     }
 
     render () {
+        // Options to disable video controls:
+        const PLAYER_OPTIONS : T.PlayerOptions = {
+            playerVars: {
+                controls: 0,
+                disablekb: 1,
+            }
+        };
+
         return (
             <Youtube
-                opts={{
-                    playerVars: {
-                        controls: 0,
-                        disablekb: 1,
-                    }
-                }}
+                opts={PLAYER_OPTIONS}
                 videoId={this.props.videoId}
                 onReady={this.onYouTubeReady}
             />
