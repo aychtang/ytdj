@@ -6,13 +6,21 @@
 import * as T from './types';
 import * as React from "react";
 
-import { UnitState } from "../../types/UnitState";
+import EmptyState from "../../types/EmptyState";
 
 import Youtube from "react-youtube";
 
 // -----------------------------------------------------------------------------
 
-class Record extends React.PureComponent<T.RecordProps, UnitState> {
+// Options to disable video controls:
+const PLAYER_OPTIONS : T.PlayerOptions = {
+    playerVars: {
+        controls: 0,
+        disablekb: 1,
+    }
+};
+
+class Record extends React.PureComponent<T.RecordProps, EmptyState> {
 
     constructor (props: T.RecordProps) {
         super(props, {});
@@ -31,14 +39,6 @@ class Record extends React.PureComponent<T.RecordProps, UnitState> {
     }
 
     render () {
-        // Options to disable video controls:
-        const PLAYER_OPTIONS : T.PlayerOptions = {
-            playerVars: {
-                controls: 0,
-                disablekb: 1,
-            }
-        };
-
         return (
             <Youtube
                 opts={PLAYER_OPTIONS}

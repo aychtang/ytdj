@@ -6,13 +6,13 @@
 import * as React from "react";
 
 import { TurntableProps } from "./types";
-import { UnitState } from "../../types/UnitState";
+import EmptyState from "../../types/EmptyState";
 
 import Record from "../Record/component";
 
 // -----------------------------------------------------------------------------
 
-class Turntable extends React.PureComponent<TurntableProps, UnitState> {
+class Turntable extends React.PureComponent<TurntableProps, EmptyState> {
 
     render () {
         return (
