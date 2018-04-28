@@ -16,7 +16,7 @@ class Turntable extends React.PureComponent<TurntableProps, UnitState> {
 
     render () {
         return (
-            <div>
+            <div className="App-Turntable">
                 <Record
                     speed={1}
                     playing={this.props.playing}

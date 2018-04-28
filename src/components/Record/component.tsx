@@ -37,6 +37,12 @@ class Record extends React.PureComponent<RecordProps, UnitState> {
     render () {
         return (
             <Youtube
+                opts={{
+                    playerVars: {
+                        controls: 0,
+                        disablekb: 1,
+                    }
+                }}
                 videoId={this.props.videoId}
                 onReady={this.onYouTubeReady}
             />
