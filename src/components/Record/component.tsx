@@ -1,9 +1,15 @@
 import * as React from "react";
 
-import { RecordProps } from "./types";
+import {
+    RecordProps,
+    YouTubePlayerEvent,
+} from "./types";
+
 import { UnitState } from "../../types/UnitState";
 
 import Youtube from "react-youtube";
+
+// -----------------------------------------------------------------------------
 
 /*
  * Record: View which encompasses a YouTube video which represents a "record"
@@ -16,7 +22,11 @@ class Record extends React.PureComponent<RecordProps, UnitState> {
         this.onYouTubeReady = this.onYouTubeReady.bind(this);
     }
 
-    onYouTubeReady (event: any) {
+    /*
+     * onYouTubeReady: Define behaviour for when YT player has initialised. In
+     * this case, we start the video if the Record should be playing.
+     */
+    onYouTubeReady (event: YouTubePlayerEvent) {
         if (this.props.playing) {
             event.target.playVideo();
         }
@@ -31,5 +41,7 @@ class Record extends React.PureComponent<RecordProps, UnitState> {
         );
     }
 }
+
+// -----------------------------------------------------------------------------
 
 export default Record;

@@ -4,3 +4,7 @@ export interface RecordProps {
     speed?: number;
     playing?: boolean;
 }
+
+export interface YouTubePlayerEvent {
+    target : any,
+}
