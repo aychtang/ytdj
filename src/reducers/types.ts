@@ -1,5 +1,5 @@
 
-interface Turntable {
+export interface Turntable {
     id: number;
     speed: number;
     videoId: string;
@@ -15,3 +15,19 @@ export interface AppState {
 }
 
 // -----------------------------------------------------------------------------
+
+// Register a new turntable into store:
+export type RegisterTurntableAction = {
+    type: "REGISTER_TURNTABLE",
+};
+
+// Remove a turntable from store:
+export type RemoveTurntableAction = {
+    id: number;
+    type: "REMOVE_TURNTABLE",
+};
+
+// App action type union:
+export type AppAction =
+    RemoveTurntableAction |
+    RegisterTurntableAction;
