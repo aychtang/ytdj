@@ -26,7 +26,7 @@ class Record extends React.PureComponent<RecordProps, UnitState> {
      * onYouTubeReady: Define behaviour for when YT player has initialised. In
      * this case, we start the video if the Record should be playing.
      */
-    onYouTubeReady (event: YouTubePlayerEvent) {
+    onYouTubeReady (event: YouTubePlayerEvent) : void {
         if (this.props.playing) {
             event.target.playVideo();
         }
