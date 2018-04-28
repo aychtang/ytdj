@@ -16,6 +16,7 @@ import Youtube from "react-youtube";
  * being played.
  */
 class Record extends React.PureComponent<RecordProps, UnitState> {
+
     constructor (props: RecordProps) {
         super(props, {});
 
@@ -40,6 +41,7 @@ class Record extends React.PureComponent<RecordProps, UnitState> {
             />
         );
     }
+
 }
 
 // -----------------------------------------------------------------------------

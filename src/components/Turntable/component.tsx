@@ -12,6 +12,7 @@ import Record from "../Record/component";
  * the speed by + or - 8%:
  */
 class Turntable extends React.PureComponent<TurntableProps, UnitState> {
+
     render () {
         return (
             <div>
@@ -23,6 +24,7 @@ class Turntable extends React.PureComponent<TurntableProps, UnitState> {
             </div>
         );
     }
+
 }
 
 // -----------------------------------------------------------------------------

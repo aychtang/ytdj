@@ -6,5 +6,5 @@ export interface RecordProps {
 }
 
 export interface YouTubePlayerEvent {
-    target : any,
+    target: any,
 }
