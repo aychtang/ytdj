@@ -1,3 +1,8 @@
+/*
+ * Record: View which encompasses a YouTube video which represents a "record"
+ * being played.
+ */
+
 import * as React from "react";
 
 import {
@@ -11,10 +16,6 @@ import Youtube from "react-youtube";
 
 // -----------------------------------------------------------------------------
 
-/*
- * Record: View which encompasses a YouTube video which represents a "record"
- * being played.
- */
 class Record extends React.PureComponent<RecordProps, UnitState> {
 
     constructor (props: RecordProps) {

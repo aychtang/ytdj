@@ -1,6 +1,8 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
+import AppReducer from './reducers/reducer';
+
 import Turntable from "./components/Turntable/component";
 
 // -----------------------------------------------------------------------------
