@@ -1,6 +1,5 @@
 import * as React from "react";
-
-export interface UnitState {}
+import { UnitState } from "../types/UnitState";
 
 export interface HelloProps {
     world: string;
