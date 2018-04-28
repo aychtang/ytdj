@@ -1,3 +1,4 @@
 export interface TurntableProps {
-    world: string;
+    videoId?: string;
+    playing?: boolean;
 }

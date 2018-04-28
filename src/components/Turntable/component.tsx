@@ -17,8 +17,8 @@ class Turntable extends React.PureComponent<TurntableProps, UnitState> {
             <div>
                 <Record
                     speed={1}
-                    playing={true}
-                    videoId="K_z2BkUzzSU"
+                    playing={this.props.playing}
+                    videoId={this.props.videoId}
                 />
             </div>
         );

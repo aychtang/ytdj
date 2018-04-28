@@ -5,7 +5,19 @@ import Turntable from "./components/Turntable/component";
 
 // -----------------------------------------------------------------------------
 
+const rootTree = (
+    <div>
+        <Turntable
+            playing
+            videoId="K_z2BkUzzSU"
+        />
+        <Turntable
+            videoId="VE6EitjTg3k"
+        />
+    </div>
+);
+
 ReactDOM.render(
-    <Turntable world="ytdj" />,
+    rootTree,
     document.querySelector(".app-root")
 );
