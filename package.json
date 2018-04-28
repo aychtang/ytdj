@@ -4,7 +4,8 @@
   "description": "ytdj",
   "main": "index.html",
   "scripts": {
-    "test": "npm test"
+    "test": "npm test",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
