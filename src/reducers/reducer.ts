@@ -1,5 +1,9 @@
 
 import * as T from "./types";
+import {
+    REMOVE_TURNTABLE,
+    REGISTER_TURNTABLE,
+} from "../actions/constants";
 
 import {
     set,
@@ -35,7 +39,7 @@ export default function AppReducer (
     }
 
     // Register a new turntable model at the current ID:
-    if (action.type === "REGISTER_TURNTABLE") {
+    if (action.type === REGISTER_TURNTABLE) {
         const newState = set(
             turntableIdLens(currentId),
             createTurntable(currentId),
@@ -48,7 +52,7 @@ export default function AppReducer (
     }
 
     // Remove the turntable model from the redux store:
-    if (action.type === "REMOVE_TURNTABLE") {
+    if (action.type === REMOVE_TURNTABLE) {
         return set(
             turntableIdLens(action.id),
             null,
