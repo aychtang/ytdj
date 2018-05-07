@@ -4,7 +4,7 @@
   "description": "ytdj",
   "main": "index.html",
   "scripts": {
-    "test": "npm test",
+    "test": "jest",
     "build": "webpack"
   },
   "repository": {
