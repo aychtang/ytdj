@@ -39,22 +39,22 @@ export default function AppReducer (
         return state;
     }
 
-    // Register a new turntable model at the current ID:
     if (action.type === REGISTER_TURNTABLE) {
+        const id = state.turntableId;
+
         const newState = set(
-            turntableLens(state.turntableId),
-            createTurntable(state.turntableId),
+            turntableLens(id),
+            createTurntable(id),
             state,
         );
 
         return set(
             turntableIdLens(),
-            state.turntableId + 1,
+            id + 1,
             newState,
         );
     }
 
-    // Remove the turntable model from the redux store:
     if (action.type === REMOVE_TURNTABLE) {
         return set(
             turntableLens(action.id),

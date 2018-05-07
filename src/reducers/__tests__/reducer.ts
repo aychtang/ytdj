@@ -10,7 +10,7 @@ describe("Application Reducer", () => {
     describe('REGISTER_TURNTABLE reduction', () => {
 
         it("should add a new turntable to the redux store", () => {
-            const state = AppReducer(undefined);
+            const state = AppReducer(undefined, undefined);
             expect(state.turntables[0]).toBeUndefined();
 
             const state2 = AppReducer(state, { type: REGISTER_TURNTABLE });
