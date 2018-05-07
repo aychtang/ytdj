@@ -24,14 +24,13 @@ const defaultState : T.AppState = {
 
 // -----------------------------------------------------------------------------
 
+const turntableIdLens = lensPath(["turntableId"]);
+
 const turntableLens = (id: number) =>
     lensPath(["turntables", id]);
 
 const turntablePlayingLens = (id: number) =>
     lensPath(["turntables", id, "playing"]);
-
-const turntableIdLens = () =>
-    lensPath(["turntableId"]);
 
 // -----------------------------------------------------------------------------
 
@@ -53,7 +52,7 @@ export default function AppReducer (
         );
 
         return set(
-            turntableIdLens(),
+            turntableIdLens,
             id + 1,
             newState,
         );
