@@ -6,3 +6,6 @@ node_modules/
 .env
 *.log
 npm-debug.log*
+yarn.lock
+package-lock.json
+*.DS_Store
