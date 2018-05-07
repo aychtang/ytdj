@@ -11,6 +11,20 @@
     "type": "git",
     "url": "git+https://github.com/aychtang/ytdj.git"
   },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  },
   "author": "Howard Tang",
   "license": "MIT",
   "homepage": "https://github.com/aychtang/ytdj#readme",
@@ -28,8 +42,10 @@
     "redux": "^4.0.0"
   },
   "devDependencies": {
+    "@types/jest": "^22.2.3",
     "awesome-typescript-loader": "^5.0.0",
     "source-map-loader": "^0.2.3",
+    "ts-jest": "^22.4.5",
     "typescript": "^2.8.3",
     "webpack-cli": "^2.0.15"
   }

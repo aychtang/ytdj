@@ -12,6 +12,7 @@ interface TurntableMap {
 
 export interface AppState {
     turntables: TurntableMap;
+    turntableId: number;
 }
 
 // -----------------------------------------------------------------------------
