@@ -1,6 +1,7 @@
 import AppReducer from '../reducer';
 
 import {
+    PLAY_TURNTABLE,
     REMOVE_TURNTABLE,
     REGISTER_TURNTABLE,
 } from '../../actions/constants';
@@ -70,6 +71,17 @@ describe("Application Reducer", () => {
             expect(state4.turntables[0]).toBeDefined();
             expect(state4.turntables[1]).toBe(null);
             expect(state4.turntables[2]).toBeDefined();
+        });
+
+    });
+
+    describe('PLAY_TURNTABLE reduction', () => {
+
+        it('should set a given turntable playing state to true.', () => {
+            const state = AppReducer(undefined, { type: REGISTER_TURNTABLE });
+            const state2 = AppReducer(state, { type: PLAY_TURNTABLE, id: 0 });
+
+            expect(state2.turntables[0].playing).toBe(true);
         });
 
     });

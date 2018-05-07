@@ -8,6 +8,7 @@ import AppReducer from "./reducers/reducer";
 import Turntable from "./components/Turntable/component";
 
 import {
+    PLAY_TURNTABLE,
     REGISTER_TURNTABLE,
 } from './actions/constants';
 
@@ -24,6 +25,11 @@ store.dispatch({
     type: REGISTER_TURNTABLE,
     videoId: "VE6EitjTg3k",
 });
+
+store.dispatch({
+    id: 0,
+    type: PLAY_TURNTABLE,
+})
 
 const rootTree = (
     <Provider store={store}>

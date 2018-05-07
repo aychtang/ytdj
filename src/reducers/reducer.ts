@@ -1,6 +1,7 @@
 
 import * as T from "./types";
 import {
+    PLAY_TURNTABLE,
     REMOVE_TURNTABLE,
     REGISTER_TURNTABLE,
 } from "../actions/constants";
@@ -25,6 +26,9 @@ const defaultState : T.AppState = {
 
 const turntableLens = (id: number) =>
     lensPath(["turntables", id]);
+
+const turntablePlayingLens = (id: number) =>
+    lensPath(["turntables", id, "playing"]);
 
 const turntableIdLens = () =>
     lensPath(["turntableId"]);
@@ -59,6 +63,14 @@ export default function AppReducer (
         return set(
             turntableLens(action.id),
             null,
+            state,
+        );
+    }
+
+    if (action.type === PLAY_TURNTABLE) {
+        return set(
+            turntablePlayingLens(action.id),
+            true,
             state,
         );
     }

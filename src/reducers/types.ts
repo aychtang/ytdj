@@ -29,7 +29,14 @@ export type RemoveTurntableAction = {
     type: "REMOVE_TURNTABLE";
 };
 
+// Play a turntable:
+export type PlayTurntableAction = {
+    id: number;
+    type: "PLAY_TURNTABLE";
+};
+
 // App action type union:
 export type AppAction =
+    PlayTurntableAction |
     RemoveTurntableAction |
     RegisterTurntableAction;
