@@ -17,6 +17,11 @@ describe("Application Reducer", () => {
             expect(state2.turntables[0]).toBeDefined();
         });
 
+        it("should set a new turntables videoId if available in action.", () => {
+            const state = AppReducer(undefined, { type: REGISTER_TURNTABLE, videoId: 'some-id' });
+            expect(state.turntables[0].videoId).toEqual('some-id');
+        });
+
         it('should increment id values of new turntables by 1.', () => {
             const state = AppReducer(undefined, { type: REGISTER_TURNTABLE });
             expect(state.turntables[0].id).toBe(0);

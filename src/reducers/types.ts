@@ -19,13 +19,14 @@ export interface AppState {
 
 // Register a new turntable into store:
 export type RegisterTurntableAction = {
-    type: "REGISTER_TURNTABLE",
+    type: "REGISTER_TURNTABLE";
+    videoId?: string;
 };
 
 // Remove a turntable from store:
 export type RemoveTurntableAction = {
     id: number;
-    type: "REMOVE_TURNTABLE",
+    type: "REMOVE_TURNTABLE";
 };
 
 // App action type union:

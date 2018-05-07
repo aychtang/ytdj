@@ -44,7 +44,7 @@ export default function AppReducer (
 
         const newState = set(
             turntableLens(id),
-            createTurntable(id),
+            createTurntable(id, action.videoId),
             state,
         );
 
