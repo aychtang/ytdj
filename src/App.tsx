@@ -29,7 +29,11 @@ store.dispatch({
 store.dispatch({
     id: 0,
     type: PLAY_TURNTABLE,
-})
+});
+
+store.subscribe(() => {
+    console.log(store.getState());
+});
 
 const rootTree = (
     <Provider store={store}>
