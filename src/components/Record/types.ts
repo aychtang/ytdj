@@ -1,7 +1,7 @@
 export interface RecordProps {
+    speed: number;
     videoId: string;
 
-    speed?: number;
     playing?: boolean;
 }
 

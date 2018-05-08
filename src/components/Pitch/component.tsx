@@ -2,20 +2,23 @@
  * Pitch: View which encompasses a pitch fader which controls turntable speed:
  */
 
-import * as T from './types';
+import * as T from "./types";
 import * as React from "react";
-import { connect } from 'react-redux'
+import { connect } from "react-redux";
 
-import Turntable from '../Turntable/component';
+import {lerpFac} from "../../utils/Math";
+import Turntable from "../Turntable/component";
 import EmptyState from "../../types/EmptyState";
-import { SET_TURNTABLE_PITCH } from "../../actions/constants"
+import { SET_TURNTABLE_PITCH } from "../../actions/constants";
 
 // -----------------------------------------------------------------------------
+
+const lerp = lerpFac(0.92, 1.08);
 
 class Pitch extends React.PureComponent<T.PitchProps, EmptyState> {
 
     onChange = (evt : T.PitchEvent) : void => {
-        this.props.setPitch(this.props.id, +evt.target.value);
+        this.props.setPitch(this.props.id, lerp(+evt.target.value / 100));
     }
 
     render () {

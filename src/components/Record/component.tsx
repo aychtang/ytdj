@@ -22,9 +22,16 @@ const PLAYER_OPTIONS : T.PlayerOptions = {
 
 class Record extends React.PureComponent<T.RecordProps, EmptyState> {
 
+    videoElRef: any;
+
+    componentWillReceiveProps(nextProps: T.RecordProps) : void {
+        if (this.videoElRef) {
+            this.videoElRef.internalPlayer.setPlaybackRate(this.props.speed);
+        }
+    }
+
     /*
-     * onYouTubeReady: Define behaviour for when YT player has initialised. In
-     * this case, we start the video if the Record should be playing.
+     * onYouTubeReady: To be run when YT player is initialised:
      */
     onYouTubeReady = (event: T.YouTubePlayerEvent) : void => {
         if (this.props.playing) {
@@ -35,6 +42,7 @@ class Record extends React.PureComponent<T.RecordProps, EmptyState> {
     render () {
         return (
             <Youtube
+                ref={ref => this.videoElRef = ref}
                 opts={PLAYER_OPTIONS}
                 videoId={this.props.videoId}
                 onReady={this.onYouTubeReady}
