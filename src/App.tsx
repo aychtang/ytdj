@@ -26,20 +26,11 @@ store.dispatch({
     videoId: "VE6EitjTg3k",
 });
 
-store.dispatch({
-    id: 0,
-    type: PLAY_TURNTABLE,
-});
-
-store.subscribe(() => {
-    console.log(store.getState());
-});
 
 const rootTree = (
     <Provider store={store}>
         <Container/>
     </Provider>
-
 );
 
 ReactDOM.render(
