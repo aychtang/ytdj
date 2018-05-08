@@ -9,6 +9,7 @@ import { TurntableProps } from "./types";
 import EmptyState from "../../types/EmptyState";
 
 import Record from "../Record/component";
+import Pitch from "../Pitch/component";
 
 // -----------------------------------------------------------------------------
 
@@ -18,10 +19,11 @@ class Turntable extends React.PureComponent<TurntableProps, EmptyState> {
         return (
             <div className="App-Turntable">
                 <Record
-                    speed={1}
+                    speed={this.props.speed}
                     playing={this.props.playing}
                     videoId={this.props.videoId}
                 />
+                <Pitch id={this.props.id}/>
             </div>
         );
     }

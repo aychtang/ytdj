@@ -1,4 +1,3 @@
-
 export interface Turntable {
     id: number;
     speed: number;
@@ -25,18 +24,25 @@ export type RegisterTurntableAction = {
 
 // Remove a turntable from store:
 export type RemoveTurntableAction = {
-    id: number;
     type: "REMOVE_TURNTABLE";
+    id: number;
 };
 
 // Play a turntable:
 export type PlayTurntableAction = {
-    id: number;
     type: "PLAY_TURNTABLE";
+    id: number;
 };
+
+export type SetTurntablePitchAction = {
+    type: "SET_TURNTABLE_PITCH";
+    id: number;
+    speed: number;
+}
 
 // App action type union:
 export type AppAction =
     PlayTurntableAction |
     RemoveTurntableAction |
-    RegisterTurntableAction;
+    RegisterTurntableAction |
+    SetTurntablePitchAction;

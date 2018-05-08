@@ -16,11 +16,13 @@ class Booth extends React.PureComponent<T.BoothProps, EmptyState> {
         return (
             <div>
                 {
-                    this.props.turntables.map((x: T.Turntable) =>
+                    this.props.turntables.map((tt: T.Turntable) =>
                         <Turntable
-                            key={x.id}
-                            playing={x.playing}
-                            videoId={x.videoId}
+                            id={tt.id}
+                            key={tt.id}
+                            speed={tt.speed}
+                            playing={tt.playing}
+                            videoId={tt.videoId}
                         />
                     )
                 }

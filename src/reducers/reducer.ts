@@ -4,6 +4,7 @@ import {
     PLAY_TURNTABLE,
     REMOVE_TURNTABLE,
     REGISTER_TURNTABLE,
+    SET_TURNTABLE_PITCH,
 } from "../actions/constants";
 
 import {
@@ -31,6 +32,9 @@ const turntableLens = (id: number) =>
 
 const turntablePlayingLens = (id: number) =>
     lensPath(["turntables", id, "playing"]);
+
+const turntableSpeedLens = (id: number) =>
+    lensPath(["turntables", id, "speed"]);
 
 // -----------------------------------------------------------------------------
 
@@ -70,6 +74,14 @@ export default function AppReducer (
         return set(
             turntablePlayingLens(action.id),
             true,
+            state,
+        );
+    }
+
+    if (action.type === SET_TURNTABLE_PITCH) {
+        return set(
+            turntableSpeedLens(action.id),
+            action.speed,
             state,
         );
     }
