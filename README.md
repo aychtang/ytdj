@@ -12,6 +12,13 @@ After a bit of hacking which involved dowloading an older version of chrome and 
 
 ```
 npm / yarn install
-npm / yarn run build
-open index.html
+npm / yarn build
 ```
+
+## Running the application
+
+In order to use this application you must disable the SOP security measures in your browser, here is how you would do it for Chrome on OSX:
+
+* First install a copy of Chrome v66
+* Then disable web security `open -n -a /Applications/Google\ Chrome\ 2.app --args --user-data-dir="/tmp/chrome" --disable-web-security`
+* Then go to index.html
