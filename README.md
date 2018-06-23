@@ -8,6 +8,12 @@ small range of playbackRates, I've submitted an issue about this [here](https://
 
 After a bit of hacking which involved dowloading an older version of chrome and disabling web security, I've made this app actually work.
 
+## Demo video:
+
+https://youtu.be/Xhkqii89ym4
+[![YTDJ Demo Video](https://img.youtube.com/vi/Xhkqii89ym4/0.jpg)](https://www.youtube.com/watch?v=Xhkqii89ym4)
+
+
 ## Build:
 
 ```
