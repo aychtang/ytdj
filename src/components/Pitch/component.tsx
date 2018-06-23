@@ -49,6 +49,6 @@ const mapDispatchToProps = (dispatch: any) => {
 // -----------------------------------------------------------------------------
 
 export default connect<any, T.PitchDispatchFromProps, void>(
-    () => {},
+    () => ({}),
     mapDispatchToProps,
 )(Pitch);

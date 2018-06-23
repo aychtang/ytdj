@@ -26,4 +26,4 @@ const mapStateToProps = (state: T.AppState) => ({
     turntables: values(state.turntables),
 });
 
-export default connect(mapStateToProps, () => {})(Container);
+export default connect(mapStateToProps, () => ({}))(Container);
