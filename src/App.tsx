@@ -18,12 +18,12 @@ const store = createStore(AppReducer);
 
 store.dispatch({
     type: REGISTER_TURNTABLE,
-    videoId: "K_z2BkUzzSU",
+    videoId: "NzzPYhRXI4E",
 });
 
 store.dispatch({
     type: REGISTER_TURNTABLE,
-    videoId: "VE6EitjTg3k",
+    videoId: "elPn2pvDIcg",
 });
 
 
