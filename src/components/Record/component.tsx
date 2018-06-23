@@ -15,7 +15,7 @@ import Youtube from "react-youtube";
 // Options to disable video controls:
 const PLAYER_OPTIONS : T.PlayerOptions = {
     playerVars: {
-        controls: 0,
+        controls: 1,
         disablekb: 1,
     }
 };
@@ -27,8 +27,7 @@ class Record extends React.PureComponent<T.RecordProps, EmptyState> {
     componentWillReceiveProps(nextProps: T.RecordProps) : void {
         if (this.videoElRef) {
             this.videoElRef.internalPlayer.getIframe().then((x : any) => {
-                x.contentDocument.querySelector('video').playbackRate =
-                    this.props.speed;
+                x.contentDocument.querySelector('video').playbackRate = this.props.speed;
             });
         }
     }

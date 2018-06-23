@@ -17,7 +17,7 @@ const lerp = lerpFactory(0.92, 1.08);
 
 class Pitch extends React.PureComponent<T.PitchProps, EmptyState> {
 
-    onMouseUp = (evt : T.PitchEvent) : void => {
+    onChange = (evt : T.PitchEvent) : void => {
         this.props.setPitch(this.props.id, lerp(+evt.target.value / 100));
     }
 
@@ -28,7 +28,7 @@ class Pitch extends React.PureComponent<T.PitchProps, EmptyState> {
                     min="0"
                     max="100"
                     type="range"
-                    onMouseUp={this.onMouseUp}
+                    onChange={this.onChange}
                 />
             </div>
         );
