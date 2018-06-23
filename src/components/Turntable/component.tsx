@@ -16,7 +16,6 @@ import Pitch from "../Pitch/component";
 class Turntable extends React.PureComponent<TurntableProps, EmptyState> {
 
     render () {
-        console.log('rerender turntable', this.props.speed);
         return (
             <div className="App-Turntable">
                 <Record

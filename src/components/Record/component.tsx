@@ -26,7 +26,10 @@ class Record extends React.PureComponent<T.RecordProps, EmptyState> {
 
     componentWillReceiveProps(nextProps: T.RecordProps) : void {
         if (this.videoElRef) {
-            this.videoElRef.internalPlayer.setPlaybackRate(this.props.speed);
+            this.videoElRef.internalPlayer.getIframe().then((x : any) => {
+                x.contentDocument.querySelector('video').playbackRate =
+                    this.props.speed;
+            });
         }
     }
 
