@@ -23,14 +23,13 @@ class Pitch extends React.PureComponent<T.PitchProps, EmptyState> {
 
     render () {
         return (
-            <div>
-                <input
-                    min="0"
-                    max="100"
-                    type="range"
-                    onChange={this.onChange}
-                />
-            </div>
+            <input
+                min="0"
+                max="100"
+                type="range"
+                className="App-Pitch"
+                onChange={this.onChange}
+            />
         );
     }
 

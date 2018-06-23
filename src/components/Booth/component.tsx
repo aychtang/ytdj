@@ -14,7 +14,7 @@ class Booth extends React.PureComponent<T.BoothProps, EmptyState> {
 
     render () {
         return (
-            <div>
+            <div className="App-Booth">
                 {
                     this.props.turntables.map((tt: T.Turntable) =>
                         <Turntable
