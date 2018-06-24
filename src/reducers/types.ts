@@ -18,26 +18,32 @@ export interface AppState {
 
 // Register a new turntable into store:
 export type RegisterTurntableAction = {
-    type: "REGISTER_TURNTABLE";
+    type: "turntable/REGISTER";
     videoId?: string;
-};
+}
 
 // Remove a turntable from store:
 export type RemoveTurntableAction = {
-    type: "REMOVE_TURNTABLE";
+    type: "turntable/REMOVE";
     id: number;
-};
+}
 
 // Play a turntable:
 export type PlayTurntableAction = {
-    type: "PLAY_TURNTABLE";
+    type: "turntable/PLAY";
     id: number;
-};
+}
 
 export type SetTurntablePitchAction = {
-    type: "SET_TURNTABLE_PITCH";
+    type: "turntable/PITCH";
     id: number;
     speed: number;
+}
+
+export type SetTurntableRecordAction = {
+    type: "turntable/CHANGE_RECORD";
+    id: number;
+    videoId: string;
 }
 
 // App action type union:
@@ -45,4 +51,5 @@ export type AppAction =
     PlayTurntableAction |
     RemoveTurntableAction |
     RegisterTurntableAction |
-    SetTurntablePitchAction;
+    SetTurntablePitchAction |
+    SetTurntableRecordAction;

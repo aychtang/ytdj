@@ -7,7 +7,6 @@ import * as React from "react";
 import { connect } from "react-redux";
 
 import { lerpFactory } from "../../utils/Math";
-import Turntable from "../Turntable/component";
 import EmptyState from "../../types/EmptyState";
 import { SET_TURNTABLE_PITCH } from "../../actions/constants";
 
@@ -17,8 +16,8 @@ const lerp = lerpFactory(0.92, 1.08);
 
 class Pitch extends React.PureComponent<T.PitchProps, EmptyState> {
 
-    onChange = (evt : T.PitchEvent) : void => {
-        this.props.setPitch(this.props.id, lerp(+evt.target.value / 100));
+    onChange = (evt : React.FormEvent<HTMLInputElement>) : void => {
+        this.props.setPitch(this.props.id, lerp(+evt.currentTarget.value / 100));
     }
 
     render () {

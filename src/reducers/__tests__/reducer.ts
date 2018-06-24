@@ -5,6 +5,7 @@ import {
     REMOVE_TURNTABLE,
     REGISTER_TURNTABLE,
     SET_TURNTABLE_PITCH,
+    SET_TURNTABLE_RECORD,
 } from '../../actions/constants';
 
 describe("Application Reducer", () => {
@@ -88,6 +89,7 @@ describe("Application Reducer", () => {
     });
 
     describe("SET_TURNTABLE_PITCH reduction", () => {
+
         it('should set a given turntable speed.', () => {
             const state = AppReducer(undefined, { type: REGISTER_TURNTABLE });
             const state2 = AppReducer(state, { type: SET_TURNTABLE_PITCH, id: 0, speed: 1.08 });
@@ -98,6 +100,22 @@ describe("Application Reducer", () => {
 
             expect(state3.turntables[0].speed).toBe(0.92);
         });
+
+    });
+
+    describe("SET_TURNTABLE_RECORD reduction", () => {
+
+        it('should set a given turntable videoId.', () => {
+            const state = AppReducer(undefined, { type: REGISTER_TURNTABLE });
+            const state2 = AppReducer(state, { type: SET_TURNTABLE_RECORD, id: 0, videoId: 'N4qkjLoK1QU' });
+
+            expect(state2.turntables[0].videoId).toBe('N4qkjLoK1QU');
+
+            const state3 = AppReducer(state2, { type: SET_TURNTABLE_RECORD, id: 0, videoId: 'u9JiMWsUjL8' });
+
+            expect(state3.turntables[0].videoId).toBe('u9JiMWsUjL8');
+        });
+
     });
 
 });
