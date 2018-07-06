@@ -14,7 +14,7 @@ import { setTurntablePitch } from '../../actions/pureActionCreators';
 
 class Pitch extends React.PureComponent<T.PitchProps, EmptyState> {
 
-    onChange = (evt : React.FormEvent<HTMLInputElement>) : void => {
+    onPitchChange = (evt : React.FormEvent<HTMLInputElement>) : void => {
         this.props.setPitch(
             this.props.id,
             this.props.lerp(+evt.currentTarget.value / 100),
@@ -28,7 +28,7 @@ class Pitch extends React.PureComponent<T.PitchProps, EmptyState> {
                 max="100"
                 type="range"
                 className="App-Pitch"
-                onChange={this.onChange}
+                onChange={this.onPitchChange}
             />
         );
     }
