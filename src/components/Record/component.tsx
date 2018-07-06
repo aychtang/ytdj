@@ -3,12 +3,11 @@
  * being played.
  */
 
-import * as T from './types';
 import * as React from "react";
-
-import EmptyState from "../../types/EmptyState";
-
 import Youtube from "react-youtube";
+
+import * as T from './types';
+import EmptyState from "../../types/EmptyState";
 
 // -----------------------------------------------------------------------------
 

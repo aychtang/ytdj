@@ -2,12 +2,11 @@
  * Pitch: View which encompasses a pitch fader which controls turntable speed:
  */
 
-import * as T from "./types";
 import * as React from "react";
 import { connect } from "react-redux";
 
+import * as T from "./types";
 import EmptyState from "../../types/EmptyState";
-import { SET_TURNTABLE_PITCH } from "../../actions/constants";
 import { setTurntablePitch } from '../../actions/pureActionCreators';
 
 // -----------------------------------------------------------------------------

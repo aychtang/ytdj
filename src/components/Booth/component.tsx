@@ -2,9 +2,9 @@
  * Booth: View which encompasses a set of turntables:
  */
 
-import * as T from './types';
 import * as React from "react";
 
+import * as T from './types';
 import Turntable from '../Turntable/component';
 import EmptyState from "../../types/EmptyState";
 

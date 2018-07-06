@@ -3,13 +3,11 @@
  * the speed by + or - 8%:
  */
 
-import * as T from "./types";
 import * as React from "react";
 import { connect } from "react-redux";
 
+import * as T from "./types";
 import EmptyState from "../../types/EmptyState";
-
-import { SET_TURNTABLE_RECORD } from "../../actions/constants";
 import { setRecord } from "../../actions/pureActionCreators";
 
 // -----------------------------------------------------------------------------

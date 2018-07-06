@@ -5,13 +5,12 @@
 
 import * as React from "react";
 
-import { TurntableProps } from "./types";
-import EmptyState from "../../types/EmptyState";
-
 import Pitch from "../Pitch/component";
 import Record from "../Record/component";
 import RecordBag from "../RecordBag/component";
+import EmptyState from "../../types/EmptyState";
 import { lerpFactory } from "../../utils/Math";
+import { TurntableProps } from "./types";
 
 // -----------------------------------------------------------------------------
 
