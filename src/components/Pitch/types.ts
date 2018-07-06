@@ -1,5 +1,6 @@
 export interface PitchProps {
     id: number;
+    lerp: (x: number) => number;
     setPitch?: (id: number, speed: number) => void;
 }
 

@@ -11,6 +11,7 @@ import EmptyState from "../../types/EmptyState";
 import Pitch from "../Pitch/component";
 import Record from "../Record/component";
 import RecordBag from "../RecordBag/component";
+import { lerpFactory } from "../../utils/Math";
 
 // -----------------------------------------------------------------------------
 
@@ -28,7 +29,10 @@ class Turntable extends React.PureComponent<TurntableProps, EmptyState> {
                     playing={this.props.playing}
                     videoId={this.props.videoId}
                 />
-                <Pitch id={this.props.id}/>
+                <Pitch
+                    id={this.props.id}
+                    lerp={lerpFactory(0.92, 1.08)}
+                />
             </div>
         );
     }

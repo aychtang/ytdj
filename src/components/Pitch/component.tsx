@@ -6,19 +6,19 @@ import * as T from "./types";
 import * as React from "react";
 import { connect } from "react-redux";
 
-import { lerpFactory } from "../../utils/Math";
 import EmptyState from "../../types/EmptyState";
 import { SET_TURNTABLE_PITCH } from "../../actions/constants";
 import { setTurntablePitch } from '../../actions/pureActionCreators';
 
 // -----------------------------------------------------------------------------
 
-const lerp = lerpFactory(0.92, 1.08);
-
 class Pitch extends React.PureComponent<T.PitchProps, EmptyState> {
 
     onChange = (evt : React.FormEvent<HTMLInputElement>) : void => {
-        this.props.setPitch(this.props.id, lerp(+evt.currentTarget.value / 100));
+        this.props.setPitch(
+            this.props.id,
+            this.props.lerp(+evt.currentTarget.value / 100),
+        );
     }
 
     render () {
