@@ -14,7 +14,7 @@ import { setRecord } from "../../actions/pureActionCreators";
 
 // -----------------------------------------------------------------------------
 
-class RecordBag extends React.PureComponent<T.RecordBagProps, any> {
+class RecordBag extends React.PureComponent<T.RecordBagProps, T.RecordBagState> {
 
     state = {
         value: this.props.default,

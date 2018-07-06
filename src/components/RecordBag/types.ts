@@ -4,6 +4,10 @@ export interface RecordBagProps {
     setRecord?: (id: number, videoId: string) => void;
 }
 
+export interface RecordBagState {
+    value: string;
+}
+
 export interface RecordBagDispatchFromProps {
     setRecord: (id: number, videoId: string) => void;
 }
