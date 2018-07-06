@@ -3,7 +3,7 @@
  */
 
 import * as React from "react";
-import { connect } from "react-redux";
+import { connect, Dispatch } from "react-redux";
 
 import * as T from "./types";
 import EmptyState from "../../types/EmptyState";
@@ -38,7 +38,7 @@ class Pitch extends React.PureComponent<T.PitchProps, EmptyState> {
 
 export default connect<any, T.PitchDispatchFromProps, void>(
     () => ({}),
-    (dispatch: any) => ({
+    (dispatch: Dispatch<T.PitchDispatchFromProps>) => ({
         setPitch: (id: number, speed: number) : void => {
             dispatch(setTurntablePitch(id, speed))
         }

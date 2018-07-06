@@ -4,7 +4,7 @@
  */
 
 import * as React from "react";
-import { connect } from "react-redux";
+import { connect, Dispatch } from "react-redux";
 
 import * as T from "./types";
 import EmptyState from "../../types/EmptyState";
@@ -49,7 +49,7 @@ class RecordBag extends React.PureComponent<T.RecordBagProps, T.RecordBagState> 
 
 export default connect<any, T.RecordBagDispatchFromProps, void>(
     () => ({}),
-    (dispatch: any) => ({
+    (dispatch: Dispatch<T.RecordBagDispatchFromProps>) => ({
         setRecord: (id: number, videoId: string) : void => {
             dispatch(setRecord(id, videoId))
         }
