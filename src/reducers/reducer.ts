@@ -28,17 +28,17 @@ const defaultState : T.AppState = {
 
 const turntableIdLens = lensPath(["turntableId"]);
 
-const turntableLens = (id: number) =>
-    lensPath(["turntables", id]);
+const turntableLens = (turntableId: number) =>
+    lensPath(["turntables", turntableId]);
 
-const turntablePlayingLens = (id: number) =>
-    lensPath(["turntables", id, "playing"]);
+const turntablePlayingLens = (turntableId: number) =>
+    lensPath(["turntables", turntableId, "playing"]);
 
-const turntableSpeedLens = (id: number) =>
-    lensPath(["turntables", id, "speed"]);
+const turntableSpeedLens = (turntableId: number) =>
+    lensPath(["turntables", turntableId, "speed"]);
 
-const turntableRecordLens = (id: number) =>
-    lensPath(["turntables", id, "videoId"]);
+const turntableRecordLens = (turntableId: number) =>
+    lensPath(["turntables", turntableId, "videoId"]);
 
 // -----------------------------------------------------------------------------
 
@@ -68,7 +68,7 @@ export default function AppReducer (
 
     if (action.type === REMOVE_TURNTABLE) {
         return set(
-            turntableLens(action.id),
+            turntableLens(action.turntableId),
             null,
             state,
         );
@@ -76,7 +76,7 @@ export default function AppReducer (
 
     if (action.type === PLAY_TURNTABLE) {
         return set(
-            turntablePlayingLens(action.id),
+            turntablePlayingLens(action.turntableId),
             true,
             state,
         );
@@ -84,7 +84,7 @@ export default function AppReducer (
 
     if (action.type === SET_TURNTABLE_PITCH) {
         return set(
-            turntableSpeedLens(action.id),
+            turntableSpeedLens(action.turntableId),
             action.speed,
             state,
         );
@@ -92,7 +92,7 @@ export default function AppReducer (
 
     if (action.type === SET_TURNTABLE_RECORD) {
         return set(
-            turntableRecordLens(action.id),
+            turntableRecordLens(action.turntableId),
             action.videoId,
             state,
         );

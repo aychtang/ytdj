@@ -9,6 +9,7 @@ import { connect } from "react-redux";
 import { lerpFactory } from "../../utils/Math";
 import EmptyState from "../../types/EmptyState";
 import { SET_TURNTABLE_PITCH } from "../../actions/constants";
+import { setTurntablePitch } from '../../actions/pureActionCreators';
 
 // -----------------------------------------------------------------------------
 
@@ -34,20 +35,13 @@ class Pitch extends React.PureComponent<T.PitchProps, EmptyState> {
 
 }
 
-const mapDispatchToProps = (dispatch: any) => {
-    return {
-        setPitch: (id: number, speed: number) : void =>
-            dispatch({
-                id,
-                type: SET_TURNTABLE_PITCH,
-                speed,
-            })    
-    };
-};
-
 // -----------------------------------------------------------------------------
 
 export default connect<any, T.PitchDispatchFromProps, void>(
     () => ({}),
-    mapDispatchToProps,
+    (dispatch: any) => ({
+        setPitch: (id: number, speed: number) : void => {
+            dispatch(setTurntablePitch(id, speed))
+        }
+    })
 )(Pitch);

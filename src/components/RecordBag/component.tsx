@@ -10,6 +10,7 @@ import { connect } from "react-redux";
 import EmptyState from "../../types/EmptyState";
 
 import { SET_TURNTABLE_RECORD } from "../../actions/constants";
+import { setRecord } from "../../actions/pureActionCreators";
 
 // -----------------------------------------------------------------------------
 
@@ -46,20 +47,13 @@ class RecordBag extends React.PureComponent<T.RecordBagProps, any> {
 
 }
 
-const mapDispatchToProps = (dispatch: any) => {
-    return {
-        setRecord: (id: number, videoId: string) : void =>
-            dispatch({
-                id,
-                videoId,
-                type: SET_TURNTABLE_RECORD,
-            })    
-    };
-};
-
 // -----------------------------------------------------------------------------
 
 export default connect<any, T.RecordBagDispatchFromProps, void>(
     () => ({}),
-    mapDispatchToProps,
+    (dispatch: any) => ({
+        setRecord: (id: number, videoId: string) : void => {
+            dispatch(setRecord(id, videoId))
+        }
+    })
 )(RecordBag);

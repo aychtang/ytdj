@@ -12,20 +12,18 @@ import {
     REGISTER_TURNTABLE,
 } from './actions/constants';
 
+import {
+    registerTurntable,
+} from './actions/pureActionCreators';
+
 // -----------------------------------------------------------------------------
 
 const store = createStore(AppReducer);
 
-store.dispatch({
-    type: REGISTER_TURNTABLE,
-    videoId: "NzzPYhRXI4E",
-});
+store.dispatch(registerTurntable("NzzPYhRXI4E"));
+store.dispatch(registerTurntable("elPn2pvDIcg"));
 
-store.dispatch({
-    type: REGISTER_TURNTABLE,
-    videoId: "elPn2pvDIcg",
-});
-
+// -----------------------------------------------------------------------------
 
 const rootTree = (
     <Provider store={store}>

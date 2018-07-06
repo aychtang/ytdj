@@ -25,24 +25,24 @@ export type RegisterTurntableAction = {
 // Remove a turntable from store:
 export type RemoveTurntableAction = {
     type: "turntable/REMOVE";
-    id: number;
+    turntableId: number;
 }
 
 // Play a turntable:
 export type PlayTurntableAction = {
     type: "turntable/PLAY";
-    id: number;
+    turntableId: number;
 }
 
 export type SetTurntablePitchAction = {
     type: "turntable/PITCH";
-    id: number;
+    turntableId: number;
     speed: number;
 }
 
 export type SetTurntableRecordAction = {
     type: "turntable/CHANGE_RECORD";
-    id: number;
+    turntableId: number;
     videoId: string;
 }
 
