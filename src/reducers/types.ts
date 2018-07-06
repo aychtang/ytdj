@@ -36,14 +36,14 @@ export type PlayTurntableAction = {
 
 export type SetTurntablePitchAction = {
     type: "turntable/PITCH";
-    turntableId: number;
     speed: number;
+    turntableId: number;
 }
 
 export type SetTurntableRecordAction = {
     type: "turntable/CHANGE_RECORD";
-    turntableId: number;
     videoId: string;
+    turntableId: number;
 }
 
 // App action type union:

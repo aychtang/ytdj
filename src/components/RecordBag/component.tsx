@@ -20,13 +20,13 @@ class RecordBag extends React.PureComponent<T.RecordBagProps, any> {
         value: this.props.default,
     }
 
-    onChange = (evt: React.FormEvent<HTMLInputElement>) => {
+    onInputChange = (evt: React.FormEvent<HTMLInputElement>) => {
         this.setState({
             value: evt.currentTarget.value,
         });
     }
 
-    onKeyUp = (evt: any) => {
+    onInputKeyUp = (evt: React.KeyboardEvent<HTMLInputElement>) => {
         if (evt.keyCode === 13) {
             this.props.setRecord(this.props.id, this.state.value);
         }
@@ -38,8 +38,8 @@ class RecordBag extends React.PureComponent<T.RecordBagProps, any> {
                 <input
                     type="text"
                     value={this.state.value}
-                    onKeyUp={this.onKeyUp}
-                    onChange={this.onChange}
+                    onKeyUp={this.onInputKeyUp}
+                    onChange={this.onInputChange}
                 />
             </div>
         );
