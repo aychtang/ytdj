@@ -6,7 +6,9 @@ export interface RecordProps {
 }
 
 export interface YouTubePlayerEvent {
-    target: any,
+    target: {
+        playVideo: () => void,
+    }
 }
 
 interface PlayerVars {
