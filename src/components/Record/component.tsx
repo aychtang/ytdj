@@ -23,21 +23,21 @@ class Record extends React.PureComponent<T.RecordProps, EmptyState> {
 
     videoElRef: any;
 
-    componentWillReceiveProps(nextProps: T.RecordProps) : void {
+    async componentWillReceiveProps(nextProps: T.RecordProps) : Promise<void> {
         if (this.videoElRef) {
-            this.videoElRef.internalPlayer.getIframe().then((iframe : any) => {
-                iframe.contentDocument.querySelector('video').playbackRate = this.props.speed;
-            });
+            const ytIframe = await this.videoElRef.internalPlayer.getIframe();
+            this.setIframePlayBackRate(ytIframe, this.props.speed);
         }
     }
 
-    /*
-     * onYouTubeReady: To be run when YT player is initialised:
-     */
     onYouTubeReady = (event: T.YouTubePlayerEvent) : void => {
         if (this.props.playing) {
             event.target.playVideo();
         }
+    }
+
+    setIframePlayBackRate = (iframe: any, speed: number) : void {
+        iframe.contentDocument.querySelector('video').playbackRate = speed;
     }
 
     render () {

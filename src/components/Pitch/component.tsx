@@ -36,7 +36,7 @@ class Pitch extends React.PureComponent<T.PitchProps, EmptyState> {
 
 // -----------------------------------------------------------------------------
 
-export default connect<any, T.PitchDispatchFromProps, void>(
+export default connect<any, T.PitchDispatchFromProps, {}>(
     () => ({}),
     (dispatch: Dispatch<T.PitchDispatchFromProps>) => ({
         setPitch: (id: number, speed: number) : void => {

@@ -47,7 +47,7 @@ class RecordBag extends React.PureComponent<T.RecordBagProps, T.RecordBagState> 
 
 // -----------------------------------------------------------------------------
 
-export default connect<any, T.RecordBagDispatchFromProps, void>(
+export default connect<any, T.RecordBagDispatchFromProps, {}>(
     () => ({}),
     (dispatch: Dispatch<T.RecordBagDispatchFromProps>) => ({
         setRecord: (id: number, videoId: string) : void => {
